@@ -1,0 +1,39 @@
+<!-- CONTENT -->
+<%- include('./header', {}); %>
+
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">
+          <h3>Posts</h3>
+        </th>
+        <% if(session.isAdmin) { %>
+        <th scope="col">
+          <h3>Action</h3>
+        </th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.map(el => { %>
+      <tr>
+        <td>
+          <h3><a href="/posts/<%= el.id %>"><%= el.title %></a></h3>
+        </td>
+        <% if(session.isAdmin) { %>
+        <td>
+          <h3><a href="/posts/edit/<%= el.id %>">Edit</a></h3>
+          <h3><a href="/posts/delete/<%= el.id %>">Delete</a></h3>
+        </td>
+        <% } %>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+</div>
+
+<%- include('./footer', {}); %>
+<!-- CONTENT -->
