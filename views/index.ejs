@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <thead>
+        <tr>
+            <td>uid</td>
+            <td>id</td>
+            <td>hashrate</td>
+            <td>lastshare</td>
+            <td>rating</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.data.forEach(index => { %>
+            <tr>
+              <td><%= index.username %></td>
+              <td><%= index.email %></td>
+              <td><%= index.isAdmin %></td>
+            </tr>
+          <% }) %>
+    </tbody>
 </body>
 </html>
