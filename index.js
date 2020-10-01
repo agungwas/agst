@@ -1,5 +1,6 @@
 const Express = require('express')
 const app = Express()
+const PORT = process.env.PORT || 4000
 
 // let data = 'https://api.nanopool.org/v1/eth/workers/0x20aa46b632b7ca6f0c7dbd91e0bc7b1c7215a0ef'
 // JSON.parse(data)
@@ -11,6 +12,6 @@ app.get('/', (req, res) => {
     res.render('index', {data} )
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     console.log('success')
 })
